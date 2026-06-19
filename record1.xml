@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<le:programRecord xmlns:le="http://www.example.com/le/elements/"
+                  xmlns:dc="http://purl.org/dc/elements/1.1/"
+                  xmlns:dcterms="http://purl.org/dc/terms/"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.example.com/le/elements/ programSchema.xsd">
+                  
+  <dc:identifier>011001</dc:identifier>
+  <dc:publisher>국립중앙도서관</dc:publisher>
+  <dc:title>[1인 미디어 아카데미] AI와 함께하는 전자책 기획과 완성(기본)</dc:title>
+  <dc:description>ChatGPT를 활용하여 주제 선정, 목차 구성, 표지 제작 등 전자책 제작 전 과정을 실습 중심, AI를 활용해 원고를 작성하고 보완하는 과정을 경험</dc:description>
+  <le:appPeriod>2026-05-11/2026-05-31</le:appPeriod>
+  
+  <le:operatingSchedule>
+    <dcterms:temporal>2026-06-16/2026-06-25</dcterms:temporal>
+    <le:Days>화요일, 목요일</le:Days>
+    <le:StartTime>13:00:00</le:StartTime>
+    <le:EndTime>17:00:00</le:EndTime>
+  </le:operatingSchedule>
+  
+  <le:sessionCount>4</le:sessionCount>
+  <le:venue>디지털도서관 미디어교육실(B2)</le:venue>
+  <le:targetAge>청소년</le:targetAge>
+  <le:targetAge>청장년</le:targetAge>
+  <le:targetAge>노년층</le:targetAge>
+  <le:capacity>16</le:capacity>
+  <le:regMethod>홈페이지 접수</le:regMethod>
+  <dc:format>오프라인</dc:format>
+  <le:deptName>교육 운영 담당자</le:deptName>
+  <le:deptPhone>02-589-2023</le:deptPhone>
+  
+  <dc:subject>인공지능</dc:subject>
+  <dc:subject>4차산업</dc:subject>
+  <dc:subject>전자책</dc:subject>
+  <dc:subject>디지털북</dc:subject>
+  <dc:subject>아카데미</dc:subject>
+  
+  <dc:type>강연</dc:type>
+  <dc:type>특강</dc:type>
+  <dc:type>체험</dc:type>
+  
+</le:programRecord>

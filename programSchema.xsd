@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/le/elements/"
+           xmlns:le="http://www.example.com/le/elements/"
+           xmlns:dc="http://purl.org/dc/elements/1.1/"
+           xmlns:dcterms="http://purl.org/dc/terms/"
+           elementFormDefault="qualified">
+
+  <xs:import namespace="http://purl.org/dc/elements/1.1/" 
+             schemaLocation="https://www.dublincore.org/schemas/xmls/qdc/2008/02/11/dc.xsd"/>
+  <xs:import namespace="http://purl.org/dc/terms/" 
+             schemaLocation="https://www.dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd"/>
+
+  <xs:simpleType name="dayEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="월요일"/>
+      <xs:enumeration value="화요일"/>
+      <xs:enumeration value="수요일"/>
+      <xs:enumeration value="목요일"/>
+      <xs:enumeration value="금요일"/>
+      <xs:enumeration value="토요일"/>
+      <xs:enumeration value="일요일"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="dayListType">
+    <xs:list itemType="le:dayEnum"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="targetAgeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="영유아(7세 이하)"/>
+      <xs:enumeration value="아동(초등학생)"/>
+      <xs:enumeration value="청소년(중, 고등학생)"/>
+      <xs:enumeration value="청장년(20세 이상 64세 이하)"/>
+      <xs:enumeration value="노년층(65세 이상)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="regMethodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="홈페이지 접수"/>
+      <xs:enumeration value="전화 접수"/>
+      <xs:enumeration value="현장 접수"/>
+      <xs:enumeration value="자유 관람"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="formatType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="온라인"/>
+      <xs:enumeration value="오프라인"/>
+      <xs:enumeration value="하이브리드"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="강연"/>
+      <xs:enumeration value="특강"/>
+      <xs:enumeration value="정규강좌"/>
+      <xs:enumeration value="체험"/>
+      <xs:enumeration value="워크숍"/>
+      <xs:enumeration value="독서회/동아리"/>
+      <xs:enumeration value="공연"/>
+      <xs:enumeration value="전시"/>
+      <xs:enumeration value="축제/행사"/>
+      <xs:enumeration value="대회/공모전"/>
+      <xs:enumeration value="멘토링/상담"/>
+      <xs:enumeration value="기타"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="programRecord">
+    <xs:complexType>
+      <xs:sequence>
+        
+        <xs:element ref="dc:identifier">
+          <xs:annotation>
+            <xs:documentation>정의: 도서관부호(6자리) / 설명: 도서관부호 조회 사이트: https://librarian.nl.go.kr/LI/contents/L10404000000.do</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element ref="dc:publisher">
+          <xs:annotation>
+            <xs:documentation>정의: 도서관 공식 명칭 / 설명: 도서관 공식 명칭(예: 은평구립도서관)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element ref="dc:title">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램, 강연 및 행사 공식 명칭 / 설명: 프로그램 공식 명칭(예: 도서관 길 위의 인문학)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element ref="dc:description">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 주요 내용 작성 / 설명: 프로그램 운영 내용 작성</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="instructor" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램을 진행하는 강사명 / 설명: 개인명, 단체명 입력 (선택 사항)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="appPeriod" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 신청 기간 / 설명: ISO 8601 기간 규격 준수(예: 시작일시/종료일시) yyyy-mm-ddThh:mm</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="operatingSchedule">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 운영 기간 / 설명: 프로그램 운영 일정(기간, 요일, 시간)을 포괄하는 상위 그룹 컨테이너</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="dcterms:temporal">
+                <xs:annotation>
+                  <xs:documentation>정의: 프로그램 시작일과 종료일 / 설명: 프로그램 시작일과 종료일</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Days" type="le:dayListType">
+                <xs:annotation>
+                  <xs:documentation>정의: 프로그램 진행되는 요일 / 설명: [통제어휘] 별도 '통제어휘 부록' 시트의 요일 지침 참조</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="StartTime" type="xs:time">
+                <xs:annotation>
+                  <xs:documentation>정의: 프로그램 운영 시작 시간 / 설명: 24시간제 기준 시작 시각(예: 19:00)</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="EndTime" type="xs:time" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>정의: 프로그램 운영 종료 시간 / 설명: 24시간제 기준 종료 시각(예: 21:00). 종료 시각이 유동적인 강좌의 경우 생략 가능.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <xs:element name="sessionCount" type="xs:integer">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 운영 횟수 / 설명: 프로그램 진행 총 회차 수 (예: 8)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="venue" type="xs:string" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>정의: 운영 장소 명칭(강의실명) / 설명: 도서관 강의실 명칭(예: 다목적실)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="targetAge" type="le:targetAgeType" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 운영 대상 / 설명: [통제어휘] 별도 '통제어휘 부록' 시트의 연령대 분류 지침 참조</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="capacity" type="xs:integer">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 모집 인원 / 설명: 프로그램 모집 인원 수(예: 15)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="regMethod" type="le:regMethodType" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 접수 방식(홈페이지 접수, 전화 접수, 현장 접수, 자유 관람) / 설명: [통제어휘] 별도 '통제어휘 부록' 시트의 접수 방식 지침 참조</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element ref="dc:format">
+          <xs:annotation>
+            <xs:documentation>정의: 강의 진행 방식(온라인, 오프라인, 하이브리드) / 설명: [통제어휘] 별도 '통제어휘 부록' 시트의 진행 방식 지침 참조</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="materials" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>정의: 이용자가 직접 지참해야 하거나 도서관에서 사전 안내해야 하는 준비물 목록 / 설명: 준비물이 없는 경우 생략 가능 (자유 입력, 예: 개인 노트북, 필기도구)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="deptName" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 운영 부서명 / 설명: 담당 부서명 (예: 사서과 문화홍보팀)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="deptPhone" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램 운영 부서 연락처 / 설명: 지역번호를 포함한 공식 유선번호 (예: 02-2133-0241)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element ref="dc:subject" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램이 무엇에 관한 내용, 핵심 주제 키워드 (태그 브라우징용) / 설명: 프로그램의 핵심 주제를 나타내는 키워드를 쉼표(,)로 구분하여 자유 입력 (예: 생성형 AI, 전자책)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+        <xs:element ref="dc:type" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>정의: 프로그램의 본질적인 장르/형태(Genre)가 무엇인가 / 설명: [통제어휘] 별도 '통제어휘 부록' 시트의 프로그램 형식 지침 참조</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
