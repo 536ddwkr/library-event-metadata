@@ -3,35 +3,32 @@
                   xmlns:dc="http://purl.org/dc/elements/1.1/"
                   xmlns:dcterms="http://purl.org/dc/terms/"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://www.example.com/le/elements/ programSchema.xsd">
+                  xsi:schemaLocation="http://www.example.com/le/elements/ https://536ddwkr.github.io/library-event-metadata/programSchema.xsd">
                   
   <dc:identifier>111110</dc:identifier>
   <dc:publisher>구립증산도서관</dc:publisher>
   <dc:title>[문화행사] 환경의 달 - 직조바느질 원데이 클래스 제로웨이스트 수선공방 </dc:title>
   <dc:description>환경의 달 개관시간 연장 지원사업, 기초 바느질 및 직조 바느질(다닝) 원데이 클래스 제로웨이스트 수선공방, 선택지참 수선하거나 기록하고 싶은 천, 손수건, 의류 등 *개인물품 없이도 참여 가능</dc:description>
+  <le:instructor>스튜디오 오알룸</le:instructor>
   <le:appPeriod>2026-06-17T09:00:00/2026-06-24T17:00:00</le:appPeriod>
   
   <le:operatingSchedule>
     <dcterms:temporal>2026-06-24</dcterms:temporal>
     <le:Days>수요일</le:Days>
     <le:StartTime>19:00:00</le:StartTime>
-    <le:EndTime></le:EndTime>
   </le:operatingSchedule>
   
   <le:sessionCount>4</le:sessionCount>
   <le:venue>1층 문화교육실</le:venue>
-  <le:targetAge>성인</le:targetAge>
+  <le:targetAge>청장년(20세 이상 64세 이하)</le:targetAge>
   <le:capacity>12</le:capacity>
-  <le:instructor>스튜디오 오알룸</le:instructor>
-  <le:materials>선택지참) 수선하거나 기록하고 싶은 천, 손수건, 의류 등 *개인물품 없이도 참여 가능</le:materials>
   <le:regMethod>홈페이지 접수</le:regMethod>
   <dc:format>오프라인</dc:format>
+  <le:materials>선택지참) 수선하거나 기록하고 싶은 천, 손수건, 의류 등 *개인물품 없이도 참여 가능</le:materials>
   <le:deptName>문화홍보팀</le:deptName>
   <le:deptPhone>02-385-1671(내선5)</le:deptPhone>
   
-  <dc:subject>수선</dc:subject>
-  <dc:subject>다닝</dc:subject>
-  <dc:subject>원데이클래스</dc:subject>
+  <dc:subject>수선, 다닝, 원데이클래스</dc:subject>
   
   <dc:type>특강</dc:type>
   <dc:type>체험</dc:type>
