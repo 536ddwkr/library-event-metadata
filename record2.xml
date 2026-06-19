@@ -3,12 +3,13 @@
                   xmlns:dc="http://purl.org/dc/elements/1.1/"
                   xmlns:dcterms="http://purl.org/dc/terms/"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://www.example.com/le/elements/ programSchema.xsd">
+                  xsi:schemaLocation="http://www.example.com/le/elements/ https://536ddwkr.github.io/library-event-metadata/programSchema.xsd">
                   
   <dc:identifier>111042</dc:identifier>
   <dc:publisher>은평구립도서관</dc:publisher>
   <dc:title>드론 전문 강사(드론교육지도사 2급) 양성 과정</dc:title>
   <dc:description>드론을 배우고 가르치는 전문가로 성장할 기회! 이론과 실습, 교육법을 바탕으로 실제 수업에 활용 가능한 지도사 양성 과정입니다.</dc:description>
+  <le:instructor>이은총</le:instructor>
   <le:appPeriod>2026-06-05T09:00:00/2026-06-12T24:00:00</le:appPeriod>
   
   <le:operatingSchedule>
@@ -20,19 +21,14 @@
   
   <le:sessionCount>4</le:sessionCount>
   <le:venue>지하 1층 다목적실</le:venue>
-  <le:targetAge>성인</le:targetAge>
+  <le:targetAge>청장년(20세 이상 64세 이하)</le:targetAge>
   <le:capacity>20</le:capacity>
-  <le:instructor>이은총</le:instructor>
   <le:regMethod>홈페이지 접수</le:regMethod>
   <dc:format>오프라인</dc:format>
   <le:deptName>스마트리움</le:deptName>
   <le:deptPhone>02-385-1671(내선5)</le:deptPhone>
   
-  <dc:subject>드론</dc:subject>
-  <dc:subject>4차산업</dc:subject>
-  <dc:subject>교육지도사</dc:subject>
-  <dc:subject>자격증</dc:subject>
-  <dc:subject>전문강사</dc:subject>
+  <dc:subject>드론, 4차산업, 교육지도사, 자격증, 전문강사</dc:subject>
   
   <dc:type>강연</dc:type>
   <dc:type>특강</dc:type>
