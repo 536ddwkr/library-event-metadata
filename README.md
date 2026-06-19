@@ -36,7 +36,7 @@ library-event-metadata 스키마를 구성하는 상위 컨테이너 `programRec
 | **dc:description** | dc | 운영 내용 | `xs:string` | 필수 (Required) | 프로그램의 주요 운영 내용 기술 |
 | **le:instructor** | le | 운영 강사 | `xs:string` | 선택 (Optional) | 프로그램을 진행하는 강사명 또는 단체명 (다중 입력 가능) |
 | **le:appPeriod** | le | 신청 기간 | `xs:string` | 필수 (Required) | ISO 8601 기간 규격 준수(예: 시작일시/종료일시) yyyy-mm-ddThh:mm |
-| **le:operatingSchedule** | le | 운영 일정 (Wrapper) | 복합 타입 (Complex) | 필수 (Required) | 프로그램 운영 일정을 포괄하는 상위 컨테이너 |
+| **le:operatingSchedule** | le | 운영 일정 | 복합 타입 (Complex) | 필수 (Required) | 프로그램 운영 일정을 포괄하는 상위 컨테이너 |
 | **↳ dcterms:temporal** | dcterms | 운영 기간 | `xs:string` | 필수 (Required) | 프로그램 실제 운영 시작일과 종료일 |
 | **↳ le:Days** | le | 운영 요일 | `le:dayListType` | 필수 (Required) | [통제어휘 목록] 공백으로 다중 입력 가능한 요일 |
 | **↳ le:StartTime** | le | 운영 시작 시간 | `xs:time` | 필수 (Required) | 24시간제 기준 강의 시작 시간 |
