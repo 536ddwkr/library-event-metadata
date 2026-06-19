@@ -21,7 +21,7 @@
   
   <le:sessionCount>4</le:sessionCount>
   <le:venue>지하 1층 다목적실</le:venue>
-  <le:targetAge>청장년(20세 이상 64세 이하)</le:targetAge>
+  <le:targetAge>청장년(20세 이상 64세 이하) 노년층(65세 이상)</le:targetAge>
   <le:capacity>20</le:capacity>
   <le:regMethod>홈페이지 접수</le:regMethod>
   <dc:format>오프라인</dc:format>
